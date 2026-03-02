@@ -1,0 +1,101 @@
+Great question 👍 — this is a **very important stack application** in Data Structures.
+
+Since you're learning DSA seriously, let’s understand it properly with:
+
+1. ✅ Rules
+2. ✅ Algorithm
+3. ✅ Stack Table Example
+4. ✅ Full C Code
+
+---
+
+# 🔷 What is Infix and Postfix?
+
+* **Infix** → `A + B` (operator in middle)
+* **Postfix** → `A B +` (operator at end)
+
+Postfix is easier for computers because:
+
+* No need for brackets
+* No need to worry about precedence during evaluation
+
+---
+
+# 🔷 Rules to Convert Infix → Postfix
+
+We use a **stack for operators only**.
+
+### ✅ Rule 1: If operand → print it
+
+If character is:
+
+* letter (A–Z, a–z)
+* number (0–9)
+
+👉 Add directly to postfix expression.
+
+---
+
+### ✅ Rule 2: If '(' → push into stack
+
+---
+
+### ✅ Rule 3: If ')' → pop until '(' appears
+
+* Pop and print everything
+* Remove '(' but do NOT print it
+
+---
+
+### ✅ Rule 4: If operator (+, -, *, /, ^)
+
+Check precedence:
+
+| Operator | Precedence  |
+| -------- | ----------- |
+| ^        | 3 (highest) |
+| * /      | 2           |
+| + -      | 1           |
+
+Now:
+
+👉 While stack is NOT empty
+AND precedence(top) ≥ precedence(current operator)
+
+→ pop from stack and print
+
+Then push current operator into stack.
+
+---
+
+### ✅ Rule 5: After scanning whole expression
+
+Pop all remaining operators from stack.
+
+
+
+# 🔷 Complete Algorithm
+
+1. Create empty stack
+2. Scan expression left → right
+3. If operand → print
+4. If '(' → push
+5. If ')' → pop until '('
+6. If operator:
+
+   * while precedence(top) ≥ precedence(current)
+     → pop and print
+   * push current operator
+7. Pop all remaining operators
+
+---
+
+| Condition                    | Action                    |
+| ---------------------------- | ------------------------- |
+| Stack empty                  | Push                      |
+| Incoming > Top               | Push                      |
+| Incoming < Top               | Pop until condition false |
+| Incoming = Top (left assoc)  | Pop then push             |
+| Incoming = Top (right assoc) | Push                      |
+
+
