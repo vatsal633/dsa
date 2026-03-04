@@ -1,0 +1,56 @@
+1.What is my smallest problem? (Base Case)
+When should my function stop?
+ex if(root == NULL) return 0;
+
+2.What does my function return?
+What is this function supposed to give me?
+Examples:
+count() → number of nodes
+sum() → sum of nodes
+height() → height of tree
+
+
+3.If smaller version works, how do I use it?
+count(root->left)
+ALREADY gives correct answer.
+
+Don’t question it.
+Don’t trace it.
+Just trust it.
+
+Now ask:
+
+If left and right answers are correct,
+how do I combine them to solve current node?
+
+That’s recursion.
+
+When solving recursion, think like this:
+
+“If someone magically gives me the answer of smaller problem,
+how can I build the answer for the current problem?”
+
+That’s it.
+
+
+For Trees Specifically
+
+Never think about entire tree.
+Only think about one node.
+
+For that node:
+
+What should I return?
+What will left subtree return?
+What will right subtree return?
+How do I combine them?
+That’s all.
+
+
+
+Final Clean Definition
+
+Recursion is:
+
+Define a function that solves the problem for one element,
+assuming the same function correctly solves smaller parts.
